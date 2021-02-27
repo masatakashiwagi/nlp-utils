@@ -1,2 +1,4 @@
-# nlp-introduction
-Natural-Language-Processing Introduction
+# 自然言語処理の入門用レポジトリ
+- 気になった点などをメモしたり，ノートブック・スクリプトを残しておく
+
+## Book: 機械学習・深層学習による自然言語処理入門
