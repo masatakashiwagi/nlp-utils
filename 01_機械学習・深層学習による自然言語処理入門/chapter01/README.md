@@ -5,5 +5,5 @@
 - 形態素解析器でよく使われるのはなに？
 	- MeCab? / Juman? / Janome?
 		- よく使われるという意味ではMecabな気がします（n=1）最近だとSudachiがありますね、簡単に分割の長さ変えられるのが使いやすいと思います。早さはMecabがダントツのよう。
-			- https://qiita.com/hi-asano/items/aaf406db875f1c81530e
+			- 2019年末版 形態素解析器の比較: https://qiita.com/hi-asano/items/aaf406db875f1c81530e
 - 人間でも解釈の違いがあるので、機械で何が正しい解釈かを判断するのは難しいタスクだと感じる。
