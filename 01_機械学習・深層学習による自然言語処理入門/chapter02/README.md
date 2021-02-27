@@ -5,3 +5,4 @@
 - 自然言語処理のクラスタリングって単語の分散表現で単語をベクトル量で表して（数値にして）からする感じ？
 	- One-hotベクトル表現
 	- Word2Vec（Word Embedding）
+	- なぜ自然言語処理にとって単語の分散表現は重要なのか？: https://qiita.com/Hironsan/items/a58636f946dd51f670b0
