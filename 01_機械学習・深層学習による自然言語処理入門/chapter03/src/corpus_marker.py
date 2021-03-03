@@ -1,3 +1,4 @@
+import os
 from typing import Dict
 import json
 import requests
@@ -102,7 +103,7 @@ def extract_businesses_review(review: Dict) -> Dict:
         yield data
 
 
-def save_as_json(save_file_path, record):
+def save_as_json(save_file_path: str, record: Dict):
     """Save data as json."""
     with open(save_file_path, mode='a') as f:
         f.write(json.dumps(record, ensure_ascii=False) + '\n')
