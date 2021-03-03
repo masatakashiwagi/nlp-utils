@@ -16,6 +16,7 @@ class YelpClient:
         self.base_path = base_path
         self.search_path = self.base_path + '/v3/businesses/search'
         self.businesses_path = self.base_path + '/v3/businesses/'
+        self.headers = {'content-type': 'application/json', 'authorization': 'Bearer %s' % self.api_key}
 
     def get_search_request(self, params: Dict) -> Dict:
         """Get request to the API, search basic information about the business.
@@ -27,8 +28,7 @@ class YelpClient:
             The JSON response from the request.
         
         """
-        headers = {'content-type': 'application/json', 'authorization': 'Bearer %s' % self.api_key}
-        res = requests.get(self.search_path, headers=headers, params=params)
+        res = requests.get(self.search_path, headers=self.headers, params=params)
         
         # when http status error, raise error message.
         res.raise_for_status()
@@ -48,10 +48,9 @@ class YelpClient:
             The JSON response from the request.
         
         """
-        headers = {'content-type': 'application/json', 'authorization': 'Bearer %s' % self.api_key}
         businesses_path = self.businesses_path + businesses_id
         params = {'locale': locale}
-        res = requests.get(businesses_path, headers=headers, params=params)
+        res = requests.get(businesses_path, headers=self.headers, params=params)
 
         # when http status error, raise error message.
         res.raise_for_status()
@@ -71,10 +70,9 @@ class YelpClient:
             The JSON response from the request.
         
         """
-        headers = {'content-type': 'application/json', 'authorization': 'Bearer %s' % self.api_key}
         businesses_path = self.businesses_path + businesses_id + '/reviews'
         params = {'locale': locale}
-        res = requests.get(businesses_path, headers=headers, params=params)
+        res = requests.get(businesses_path, headers=self.headers, params=params)
 
         # when http status error, raise error message.
         res.raise_for_status()
