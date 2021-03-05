@@ -3,3 +3,4 @@
 - 気になった点などをメモしたり，ノートブック・スクリプトを残しておく
 
 ## Book: 機械学習・深層学習による自然言語処理入門
+- https://book.mynavi.jp/ec/products/detail/id=113274
