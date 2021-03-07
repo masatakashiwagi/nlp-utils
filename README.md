@@ -4,3 +4,9 @@
 
 ## Book: 機械学習・深層学習による自然言語処理入門
 - https://book.mynavi.jp/ec/products/detail/id=113274
+
+## Book: ゼロから作るDeep Learning 2 ― 自然言語処理編
+- https://www.oreilly.co.jp/books/9784873118369/
+
+## Book: PyTorch自然言語処理プログラミング word2vec/LSTM/seq2seq/BERTで日本語テキスト解析!
+- https://book.impress.co.jp/books/1119101184
