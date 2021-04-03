@@ -6,3 +6,10 @@
         - 活性化関数には色々とある
             - step関数、シグモイド関数、tanh関数、ReLU関数、Leaky ReLU関数、Maxout関数、ELU関数、etc
         
+- p154 Callback
+    - 関数の引数に渡される関数
+    - 学習中のバッチやエポックの開始/終了時にメソッドを呼び出すことができる
+    - よく使われるコールバック
+        - ModelCheckpoint
+        - EarlyStopping
+        - TensorBoard: これよく使うのか？
