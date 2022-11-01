@@ -1,0 +1,23 @@
+# Standard
+pandas
+numpy
+tqdm
+pyyaml
+# NLP
+gensim
+mecab-python3
+neologdn
+spacy
+ginza
+sudachipy
+sudachidict_core
+sudachidict_full
+nltk
+texthero
+transformers
+sentencepiece
+# Cloud
+google-cloud-bigquery
+# Other
+psutil
+jpholiday

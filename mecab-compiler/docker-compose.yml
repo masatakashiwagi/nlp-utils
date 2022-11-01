@@ -1,0 +1,28 @@
+version: '3.4'
+
+# 共通定義のテンプレート化
+x-template: &template
+  volumes:
+    - ./app:/opt/program:cached
+    - ./app/data:/opt/program/data:cached
+    - ~/.gcp:/root/.gcp:cached
+  environment:
+    TZ: Asia/Tokyo
+    LANG: 'ja_JP.UTF-8'
+
+services:
+  cost-calculator:
+    container_name: 'cost-calculator'
+    image: cost-calculator:latest
+    build:
+      context: .
+    command: bash shell/calculate_cost.sh sample_user_dict
+    <<: *template
+
+  dict-maker:
+    container_name: 'dict-maker'
+    image: dict-maker:latest
+    build:
+      context: .
+    command: bash shell/make_dict.sh sample_user_dict
+    <<: *template
