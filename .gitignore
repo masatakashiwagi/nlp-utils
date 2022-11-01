@@ -132,5 +132,4 @@ dmypy.json
 
 # Others
 api_key.txt
-data/
 logs/

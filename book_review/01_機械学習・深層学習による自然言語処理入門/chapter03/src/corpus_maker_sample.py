@@ -2,6 +2,7 @@
 Crawling gnavi Reviews.
 """
 import json
+
 import requests
 
 

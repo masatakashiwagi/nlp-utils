@@ -1,16 +1,18 @@
+import json
 import os
 from typing import Dict
-import json
+
 import requests
 
 
 class YelpClient:
     """Yelp API Client.
-    
+
     This class provides some requests to get data.
     Reference : https://www.yelp.com/developers
-    
+
     """
+
     def __init__(self, api_key, base_path):
         """Constructor."""
         self.api_key = api_key
@@ -21,16 +23,16 @@ class YelpClient:
 
     def get_search_request(self, params: Dict) -> Dict:
         """Get request to the API, search basic information about the business.
-        
+
         Args:
             params (Dict): The search keywords passed to the API.
-        
+
         Returns:
             The JSON response from the request.
-        
+
         """
         res = requests.get(self.search_path, headers=self.headers, params=params)
-        
+
         # when http status error, raise error message.
         res.raise_for_status()
         results = res.json()
@@ -39,15 +41,15 @@ class YelpClient:
 
     def get_businesses_request(self, businesses_id: str, locale: str = 'en_US') -> Dict:
         """Get request to the API, return detailed business content.
-        
+
         Args:
             businesses_id (str): The ID of the business to query.
             locale (str): The must parameter of locale to query. Defaults to en_US.
                 Japanese: ja_JP
-        
+
         Returns:
             The JSON response from the request.
-        
+
         """
         businesses_path = self.businesses_path + businesses_id
         params = {'locale': locale}
@@ -58,18 +60,18 @@ class YelpClient:
         results = res.json()
 
         return results
-    
+
     def get_businesses_review_request(self, businesses_id: str, locale: str = 'en_US') -> Dict:
         """Get request to the API, return detailed business review content.
-        
+
         Args:
             businesses_id (str): The ID of the business to query.
             locale (str): The must parameter of locale to query. Defaults to en_US.
                 Japanese: ja_JP
-        
+
         Returns:
             The JSON response from the request.
-        
+
         """
         businesses_path = self.businesses_path + businesses_id + '/reviews'
         params = {'locale': locale}
@@ -84,13 +86,13 @@ class YelpClient:
 
 def extract_businesses_review(review: Dict) -> Dict:
     """Extract detailed business review content.
-    
+
     Args:
         review (Dict): The JSON response from get_businesses_review_request method.
-    
+
     Returns:
         The content of rating and review.
-    
+
     """
     review_response = review['reviews']
     for review in review_response:
